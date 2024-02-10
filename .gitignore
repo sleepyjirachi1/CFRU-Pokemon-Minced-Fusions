@@ -35,5 +35,5 @@ Cover Art.png
 # vscode
 .vscode/
 
-# lss
-assembly/lss/
+# HMA files
+*.toml
