@@ -2434,6 +2434,7 @@ void GiveMonNatureAndAbility(struct Pokemon* mon, u8 nature, u8 abilityNum, bool
 	u8 letter = GetUnownLetterFromPersonality(personality);
 	bool8 isMinior = IsMinior(species);
 	u8 miniorCore = GetMiniorCoreFromPersonality(personality);
+	u8 shinyRange = RandRange(0, 8);
 
 	if (abilityNum == 0xFF) //Hidden Ability
 		mon->hiddenAbility = TRUE;
@@ -2445,7 +2446,6 @@ void GiveMonNatureAndAbility(struct Pokemon* mon, u8 nature, u8 abilityNum, bool
 		personality = Random32();
 		if (forceShiny)
 		{
-			u8 shinyRange = Random() % SHINY_ODDS;
 			personality = (((shinyRange ^ (sid ^ tid)) ^ LOHALF(personality)) << 16) | LOHALF(personality);
 		}
 
@@ -4093,7 +4093,7 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, unusedArg u32 unused1, unusedA
 static void CheckShinyMon(struct Pokemon* mon)
 {
 	bool8 forceShiny = FALSE;
-	u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
+	u16 shinyChance = SHINY_ODDS - 1;
 
 	#ifdef FLAG_SHINY_CREATION
 	if (FlagGet(FLAG_SHINY_CREATION))
@@ -4106,12 +4106,12 @@ static void CheckShinyMon(struct Pokemon* mon)
 		#ifdef ITEM_SHINY_CHARM
 		if (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0)
 		{
-			//Try an extra 2 times to generate shiny personality
-			if (IsShinyOtIdPersonality(otId, Random32())
-			||  IsShinyOtIdPersonality(otId, Random32()))
-				forceShiny = TRUE;
+			shinyChance *= 3; // 1/4096 -> 3/4096 (~1/1365)
 		}
 		#endif
+
+		if (RandRange(0, 65535) <= shinyChance)
+			forceShiny = TRUE;
 
 		if (!forceShiny && gFishingByte) //Currently fishing
 		{
@@ -4119,7 +4119,7 @@ static void CheckShinyMon(struct Pokemon* mon)
 
 			for (i = 0, numTries = 2 * MathMin(gFishingStreak, 20); i < numTries; ++i)
 			{
-				if (IsShinyOtIdPersonality(otId, Random32()))
+				if (RandRange(0, 65535) <= shinyChance)
 				{
 					forceShiny = TRUE;
 					break;
@@ -4150,12 +4150,12 @@ void ForceMonShiny(struct Pokemon* mon)
 	u8 letter = GetUnownLetterFromPersonality(personality);
 	bool8 isMinior = IsMinior(species);
 	u16 miniorCore = GetMiniorCoreFromPersonality(personality);
+	u8 shinyRange = RandRange(0, 8);
 
 	do
 	{
 		personality = Random32();
 
-		u8 shinyRange = Random() % SHINY_ODDS;
 		personality = (((shinyRange ^ (sid ^ tid)) ^ LOHALF(personality)) << 16) | LOHALF(personality);
 
 		if (abilityMatters)
