@@ -4106,7 +4106,7 @@ static void CheckShinyMon(struct Pokemon* mon)
 		#ifdef ITEM_SHINY_CHARM
 		if (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0)
 		{
-			shinyChance *= 3; // 1/4096 -> 3/4096 (~1/1365)
+			shinyChance *= 3; // 1/1024 -> 3/1024 (~1/341)
 		}
 		#endif
 
