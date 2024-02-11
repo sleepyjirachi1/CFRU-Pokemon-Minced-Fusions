@@ -13,6 +13,14 @@
 //#define DEBUG_DYNAMAX //Dynamax can be used in Dynamax battles without a Dynamax Band
 //#define DEBUG_AI_CHOICES //Removes the frame-based randomness of the AI's decisions
 
+/*===== Pokemon Minced Fusions =====*/
+#define MINCED_FUSIONS //This shouldn't be commented out if you're a dev or contributor for Pokémon Minced Fusions
+// #define VAR_GRANDMASTER_EFFECT 0x503E //Set this var to invoke a grandmaster effect (currently only supports enemy trainers)
+// #define VAR_GRANDMASTER_EFFECT_2 0x503F //Set this var to invoke a second grandmaster effect (currently only supports enemy trainers)
+
+// #define PRISMATIC_SOUL_T 0x1
+// #define PRISMATIC_SOUL 0xB
+
 /*===== General Vars =====*/
 #define VAR_TERRAIN 0x5000 //Set to a terrain type for a battle to begin with the given terrain
 #define VAR_TOTEM 0x5001 //to var + 3 (0x5004)
