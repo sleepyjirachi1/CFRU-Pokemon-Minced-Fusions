@@ -16,7 +16,6 @@
 /*===== Pokemon Minced Fusions =====*/
 #define MINCED_FUSIONS //This shouldn't be commented out if you're a dev or contributor for Pokémon Minced Fusions
 // #define VAR_GRANDMASTER_EFFECT 0x503E //Set this var to invoke a grandmaster effect (currently only supports enemy trainers)
-// #define VAR_GRANDMASTER_EFFECT_2 0x503F //Set this var to invoke a second grandmaster effect (currently only supports enemy trainers)
 
 // #define PRISMATIC_SOUL_T 0x1
 // #define PRISMATIC_SOUL 0xB
@@ -335,7 +334,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define FASTER_HEALTHBOX_CHANGE //The healthbar increases/decreases at a somewhat constant rate for all Pokemon
 //#define ENCOUNTER_MUSIC_BY_CLASS //Plays music when a trainer spots the player based on the trainer class rather than the value set in the trainer data.
 #define OKAY_WITH_AI_SUICIDE //The AI is allowed to use self-destructing moves
-//#define HEALTHBAR_TYPE_ICONS //Pokemon types will always be shown next to the healthbar
+#define HEALTHBAR_TYPE_ICONS //Pokemon types will always be shown next to the healthbar
 #define LAST_USED_BALL_TRIGGER //The player will be given an option to use their last used Poke Ball in wild battles by pressing L
 //#define PICK_UP_KNOCKED_OFF_ITEMS //Items knocked off wild Pokemon will be picked up at the end of battle
 //#define PICKUP_ITEMS_STRAIGHT_TO_BAG //Items obtained with Pickup or Honey Gather are placed right in the bag

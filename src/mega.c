@@ -33,16 +33,6 @@ static item_t FindBankKeystone(u8 bank);
 static const item_t sKeystoneTable[] =
 {
 	ITEM_MEGA_RING,
-
-#ifdef UNBOUND
-	ITEM_MEGA_BRACELET,
-	ITEM_MEGA_CUFF,
-	ITEM_MEGA_CHARM,
-	ITEM_MEGA_BONNET,
-	ITEM_MEGA_EARING,
-	ITEM_MEGA_ANKLET,
-	ITEM_MEGA_PENDANT,
-#endif
 };
 
 const struct Evolution* CanMegaEvolve(unusedArg u8 bank, unusedArg bool8 CheckUBInstead)
