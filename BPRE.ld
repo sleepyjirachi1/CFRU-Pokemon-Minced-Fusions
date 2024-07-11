@@ -1293,7 +1293,7 @@ IsTextPrinterActive = 0x8002E64 | 1;
 TextPrinterDrawDownArrow = 0x80054F8 | 1;
 TextPrinterWaitAutoMode = 0x8005608 | 1;
 GetStringWidth = 0x8005ED4 | 1;
-StringCopy10 = 0x8008CF4 | 1;
+StringCopy_Nickname = 0x8008CF4| 1;
 StringGetEnd10 = 0x8008D28 | 1;
 StringCopy = 0x8008D84 | 1;
 StringAppend = 0x8008DA4 | 1;
@@ -2070,3 +2070,8 @@ DMA0_CNT_H = 0x40000BA;
 
 /* Menu RTC Display */
 sTimeWindowId = 0x2037101;
+
+/* In-Game Trades */
+sInGameTradeMailMessages = 0x826d1a8;
+ItemIsMail = 0x80980f8 | 1;
+gLinkPartnerMail = 0x2031CCC;

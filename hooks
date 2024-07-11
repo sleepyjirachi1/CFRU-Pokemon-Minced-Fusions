@@ -699,6 +699,12 @@ SetInitialSafariZoneParams 080A0ED0 1
 FixSafariZoneWindow 0806EE98 0
 FixSafariZoneBattleWindow 08049D1A 1
 
+##In-Game Trades
+TradeBufferOTnameAndNicknames 8050E24 0
+GetInGameTradeSpeciesInfo 8053A9C 0
+BufferInGameTradeMonName 8053AE4 0
+CreateInGameTradePokemonInternal 8053B48 2
+
 #ifdef SCROLLING_MULTICHOICE
 
 ##Scrolling Multichoice
