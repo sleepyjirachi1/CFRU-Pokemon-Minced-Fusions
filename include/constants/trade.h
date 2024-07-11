@@ -10,17 +10,17 @@
 #define LINK_TRADE_TIMEOUT 300
 
 // In-game Trade IDs
-/*
-#define INGAME_TRADE_MR_MIME   0
-#define INGAME_TRADE_JYNX      1
-#define INGAME_TRADE_NIDORAN   2  // M or F depending on version
-#define INGAME_TRADE_FARFETCHD 3
-#define INGAME_TRADE_NIDORINOA 4  // Nidorino or Nidorina depending on version
-#define INGAME_TRADE_LICKITUNG 5
-#define INGAME_TRADE_ELECTRODE 6
-#define INGAME_TRADE_TANGELA   7
-#define INGAME_TRADE_SEEL      8
-*/
+#define INGAME_TRADE_MR_LINE                 0  // REYLEY (Route 2)
+#define INGAME_TRADE_LITLEFFING              1  // DONTAE (Cerulean City)
+#define INGAME_TRADE_GASTBUG                 2  // SAIGE (Route 5)
+#define INGAME_TRADE_MINIMIE                 3  // Elyssa (Vermillion City)
+#define INGAME_TRADE_SUNKELA                 4  // TURNER (Route 11)
+#define INGAME_TRADE_HERAPINNY               5  // HADEN (Route 18)
+#define INGAME_TRADE_AEROSCULIN              6  // CLIFTON (Cinnabar Island)
+#define INGAME_TRADE_NYMBUTO                 7  // NORMA (Cinnabar Island)
+#define INGAME_TRADE_OMANELLOR               8  // GARETT (Cinnabar Island)
+#define INGAME_TRADE_HAUNTER                 9
+#define INGAME_TRADE_WEAVILE                 10
 
 // Flag IDs for sending link data
 #define INITIATE_TRADE  1
